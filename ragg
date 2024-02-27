@@ -1,0 +1,34 @@
+Configuration failed to find one of freetype2 libpng libtiff-4 libjpeg. Try installing:
+ * deb: libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev (Debian, Ubuntu, etc)
+ * rpm: freetype-devel libpng-devel libtiff-devel libjpeg-devel (Fedora, CentOS, RHEL)
+ * csw: libfreetype_dev libpng16_dev libtiff_dev libjpeg_dev (Solaris)
+If freetype2 libpng libtiff-4 libjpeg is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a freetype2 libpng libtiff-4 libjpeg.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+-------------------------- [ERROR MESSAGE] ---------------------------
+In file included from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/x86_64-conda-linux-gnu/sysroot/usr/include/features.h:361,
+                 from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/x86_64-conda-linux-gnu/sysroot/usr/include/limits.h:27,
+                 from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed/limits.h:194,
+                 from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed/syslimits.h:7,
+                 from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/lib/gcc/x86_64-conda-linux-gnu/9.5.0/include-fixed/limits.h:34,
+                 from /usr/include/libpng16/pngconf.h:31,
+                 from /usr/include/libpng16/png.h:339,
+                 from <stdin>:2:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:482:49: error: missing binary operator before token "("
+  482 | #if __GNUC_PREREQ (4,8) || __glibc_clang_prereq (3,5)
+      |                                                 ^
+In file included from /mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/x86_64-conda-linux-gnu/sysroot/usr/include/stdio.h:932,
+                 from /usr/include/libpng16/pngconf.h:46,
+                 from /usr/include/libpng16/png.h:339,
+                 from <stdin>:2:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:228:17: error: missing binary operator before token "("
+  228 | #if __GLIBC_USE (DEPRECATED_GETS)
+      |                 ^
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘ragg’
+* removing ‘/mnt/9/yuan_jianwen/tools/miniconda/envs/R4.1.0/lib/R/library/ragg’
+
+How to fix?
+conda install -c conda-forge pkg-config
+install.package("ragg")
