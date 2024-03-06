@@ -32,3 +32,16 @@ ERROR: configuration failed for package ‘ragg’
 How to fix?
 conda install -c conda-forge pkg-config
 install.package("ragg")
+
+
+
+
+
+#install.packages("udunits2", configure.args='--with-udunits2-lib=/usr/lib/x86_64-linux-gnu/')
+
+#install.packages("units", configure.args=c('--with-udunits2-lib=/usr/lib/x86_64-linux-gnu/', '--with-udunits2-include=/usr/include/udunits2'))
+
+#install.packages('rgdal', type = "source", 
+#configure.args=c('--with-gdal-config=/home/programs/anaconda3/bin/gdal-config',
+#'--with-proj-include=//home/zuo_jing/anaconda3/bin/envs/velocyto/include/',
+#'--with-proj-lib=/home/zuo_jing/anaconda3/bin/envs/velocyto/lib/'))
