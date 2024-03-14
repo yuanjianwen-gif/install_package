@@ -45,3 +45,15 @@ install.package("ragg")
 #configure.args=c('--with-gdal-config=/home/programs/anaconda3/bin/gdal-config',
 #'--with-proj-include=//home/zuo_jing/anaconda3/bin/envs/velocyto/include/',
 #'--with-proj-lib=/home/zuo_jing/anaconda3/bin/envs/velocyto/lib/'))
+
+Error: package or namespace load failed for ‘readxl’ in dyn.load(file, DLLpath = DLLpath, ...):
+ unable to load shared object '/mnt/9/yuan_jianwen/tools/miniconda/envs/R1/lib/R/library/00LOCK-readxl/00new/readxl/libs/readxl.so':
+  /mnt/9/yuan_jianwen/tools/miniconda/envs/R1/lib/R/library/00LOCK-readxl/00new/readxl/libs/readxl.so: undefined symbol: libiconv
+Error: loading failed
+Execution halted
+ERROR: loading failed
+
+ solved by: 
+withr::with_makevars(c(PKG_LIBS = "-liconv"), install.packages("readxl"), assignment = "+=")
+
+
