@@ -57,3 +57,7 @@ ERROR: loading failed
 withr::with_makevars(c(PKG_LIBS = "-liconv"), install.packages("readxl"), assignment = "+=")
 
 
+install.packages("hdf5r")
+https://www.omicsclass.com/article/1637
+
+export LD_LIBRARY_PATH=/hwfssz1/ST_SUPERCELLS/P21Z10200N0090/yuanjianwen/00.tools/hdf5/lib
