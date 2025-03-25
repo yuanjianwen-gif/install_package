@@ -60,4 +60,20 @@ withr::with_makevars(c(PKG_LIBS = "-liconv"), install.packages("readxl"), assign
 install.packages("hdf5r")
 https://www.omicsclass.com/article/1637
 
+
+在  export CMAKE=/path/cmake之后仍然   https://arrow.apache.org/docs/r/articles/install.html 
+**** Not using cmake found at /usr/bin/cmake
+***** Version >= 3.16 required; found 2.8.12.2
+*** *** cmake was not found locally and download failed.
+    Make sure cmake >= 3.16 is installed and available on your PATH,
+    or download https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-linux-x86_64.tar.gz 
+    and define the CMAKE environment variable.
+
+------------------------- NOTE ---------------------------
+There was an issue building the Arrow C++ libraries.
+See https://arrow.apache.org/docs/r/articles/install.html
+
+solved by:
+Sys.setenv(CMAKE = "/path/to/cmake")
+
 export LD_LIBRARY_PATH=/hwfssz1/ST_SUPERCELLS/P21Z10200N0090/yuanjianwen/00.tools/hdf5/lib
